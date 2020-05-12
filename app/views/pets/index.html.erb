@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1>Pets</h1>
+    <%= link_to new_pet_path do %>
+      <i class="fas fa-paw"></i>
+    <% end %>
+  </div>
+  <% @pets.each do |pet| %>
+    <div class="card-trip">
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= pet.name %></h2>
+          <p><%= pet.address %> - Found <%= pet.found_days_ago %> days ago</p>
+        </div>
+        <h2 class="card-trip-pricing"><%= pet.species %></h2>
+      </div>
+      <%= link_to "", pet_path(pet), class: 'card-trip-link'  %>
+    </div>
+  <% end %>
+</div>
+
