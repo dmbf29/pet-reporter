@@ -3,5 +3,17 @@
   <%= f.input :address %>
   <%= f.input :found_on, html5: true %>
   <%= f.input :species, collection: Pet::SPECIES, include_blank: false %>
+  <%= f.simple_fields_for :choices do |choice_form| %>
+    <%= choice_form.input :answer %>
+  <% end %>
+  <%= f.simple_fields_for :choices do |choice_form| %>
+    <%= choice_form.input :answer %>
+  <% end %>
+  <%= f.simple_fields_for :choices do |choice_form| %>
+    <%= choice_form.input :answer %>
+  <% end %>
+  <%= f.simple_fields_for :choices do |choice_form| %>
+    <%= choice_form.input :answer %>
+  <% end %>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
