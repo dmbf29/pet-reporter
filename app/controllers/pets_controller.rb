@@ -11,6 +11,7 @@ class PetsController < ApplicationController
   def new
     # this is for the form
     @pet = Pet.new
+    @pet.choices.build
   end
 
   def create
@@ -47,6 +48,6 @@ class PetsController < ApplicationController
   end
 
   def pet_params
-    params.require(:pet).permit(:name, :address, :found_on, :species)
+    params.require(:pet).permit(:name, :address, :found_on, :species, choices_attributes: [:answer])
   end
 end

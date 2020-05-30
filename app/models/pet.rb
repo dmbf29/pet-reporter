@@ -1,5 +1,8 @@
 class Pet < ApplicationRecord
   # associations
+  has_many :choices
+  accepts_nested_attributes_for :choices
+
   SPECIES = ['dog', 'hamster', 'tiger', 'cat', 'rat']
   validates :address, presence: true
   validates :species, inclusion: { in: SPECIES }
